@@ -38,6 +38,7 @@ class StudentController extends Controller
             return view('students.index');
         } catch (\Exception $th) {
             \Log::error($th->getMessage());
+            return redirect()->back()->withErrors($th->getMessage());
         }
         
     }
